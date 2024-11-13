@@ -59,6 +59,16 @@
             text-align: center;
         }
 
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
         .navbar {
             margin-bottom: 20px;
         }
@@ -71,7 +81,6 @@
             padding: 40px;
             position: relative;
             border-radius: 8px;
-            display: none; /* Oculto por defecto */
         }
 
         .sobre-nosotros-bg::before {
@@ -90,6 +99,57 @@
             position: relative;
             z-index: 2;
         }
+
+        .service-icon-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .arrow {
+            font-size: 24px;
+            color: #007bff;
+            margin-right: 10px;
+            animation: arrowMove 0.8s infinite alternate;
+        }
+
+        @keyframes arrowMove {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-5px);
+            }
+        }
+
+        .service-icon {
+            font-size: 50px;
+            color: #007bff;
+            transition: color 0.3s ease;
+        }
+
+        .service-icon-wrapper:hover .service-icon {
+            color: #0056b3;
+        }
+
+        .banner-publicitario {
+            background-color: #007bff;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            background-color: #f8f9fa;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
     </style>
 </head>
 
@@ -104,14 +164,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="#nosotros" onclick="toggleSection('nosotros')">Nosotros</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#servicios" onclick="closeSection('nosotros')">Servicios</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#banner" onclick="closeSection('nosotros')">Banner Publicitario</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#integrantes" onclick="closeSection('nosotros')">Integrantes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contacto" onclick="closeSection('nosotros')">Contacto</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#video" onclick="closeSection('nosotros')">Video Promocional</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#banner">Banner Publicitario</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#integrantes">Integrantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#video">Video Promocional</a></li>
                 </ul>
-                <a href="https://wa.me/573212252409" target="_blank" class="btn btn-success ms-auto">
+                <a href="https://wa.me/+573212252409" target="_blank" class="btn btn-success ms-auto">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
@@ -124,19 +184,58 @@
         <p>Su aliado en asesoramiento empresarial y capacitación</p>
     </header>
 
-    <!-- Sobre Nosotros (Oculta por defecto) -->
     <section id="nosotros" class="sobre-nosotros-bg">
-        <h2>Sobre Nosotros</h2>
-        <p>En <strong>Cunice S.A.S.</strong>, somos una consultora especializada en impulsar el crecimiento y desarrollo sostenible de las empresas. Con más de una década de experiencia en el sector, brindamos asesoramiento estratégico y capacitaciones gerenciales que ayudan a nuestros clientes a enfrentar los desafíos actuales del mercado y aprovechar las oportunidades de innovación.</p>
-        <p>Nos enfocamos en transformar la visión de cada organización en resultados tangibles, optimizando procesos y potenciando el talento humano. Nuestro equipo está conformado por profesionales expertos en diversas áreas, comprometidos en ofrecer soluciones a la medida que contribuyan al logro de los objetivos empresariales, a la mejora continua y a la creación de valor a largo plazo.</p>
-        <p>En Cunice S.A.S., creemos firmemente que el éxito se construye mediante alianzas sólidas y confiables. Nos enorgullece acompañar a nuestros clientes en cada paso de su camino hacia la excelencia empresarial, adaptándonos a sus necesidades y brindando un enfoque innovador que promueve el crecimiento y la competitividad en un entorno global en constante cambio.</p>
-    </section>
+    <h2>Sobre Nosotros</h2>
+    <p>
+        En <strong>Cunice S.A.S.</strong>, somos una consultora especializada en impulsar el crecimiento y desarrollo sostenible de las empresas. Con más de una década de experiencia en el sector, brindamos asesoramiento estratégico y capacitaciones gerenciales que ayudan a nuestros clientes a enfrentar los desafíos actuales del mercado y aprovechar las oportunidades de innovación.
+    </p>
+    <p>
+        Nos enfocamos en transformar la visión de cada organización en resultados tangibles, optimizando procesos y potenciando el talento humano. Nuestro equipo está conformado por profesionales expertos en diversas áreas, comprometidos en ofrecer soluciones a la medida que contribuyan al logro de los objetivos empresariales, a la mejora continua y a la creación de valor a largo plazo.
+    </p>
+    <p>
+        En Cunice S.A.S., creemos firmemente que el éxito se construye mediante alianzas sólidas y confiables. Nos enorgullece acompañar a nuestros clientes en cada paso de su camino hacia la excelencia empresarial, adaptándonos a sus necesidades y brindando un enfoque innovador que promueve el crecimiento y la competitividad en un entorno global en constante cambio.
+    </p>
+</section>
 
     <!-- Servicios -->
     <section id="servicios">
         <div class="container text-center">
             <h2>Servicios</h2>
-            <!-- Resto del contenido de servicios -->
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-icon-wrapper" onclick="toggleInfo('infoAsesoramiento')">
+                        <span class="arrow">➔</span>
+                        <i class="fas fa-briefcase service-icon"></i>
+                    </div>
+                    <h3>Asesoramiento Gerencial</h3>
+                    <p>Soluciones estratégicas para mejorar la toma de decisiones.</p>
+                    <div id="infoAsesoramiento" class="info-box" style="display: none;">
+                        <p>Nuestro servicio de Asesoramiento Gerencial incluye el análisis estratégico de su negocio, optimización de recursos y apoyo en la toma de decisiones para maximizar el rendimiento y lograr los objetivos de su empresa.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-icon-wrapper" onclick="toggleInfo('infoCapacitaciones')">
+                        <span class="arrow">➔</span>
+                        <i class="fas fa-chalkboard-teacher service-icon"></i>
+                    </div>
+                    <h3>Capacitaciones</h3>
+                    <p>Entrenamiento en inducción, reinducción y desarrollo de competencias.</p>
+                    <div id="infoCapacitaciones" class="info-box" style="display: none;">
+                        <p>Ofrecemos capacitaciones personalizadas en competencias clave para mejorar el desempeño de su equipo de trabajo.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-icon-wrapper" onclick="toggleInfo('infoProcesos')">
+                        <span class="arrow">➔</span>
+                        <i class="fas fa-tasks service-icon"></i>
+                    </div>
+                    <h3>Optimización de Procesos</h3>
+                    <p>Mejoramos la eficiencia de sus procesos administrativos.</p>
+                    <div id="infoProcesos" class="info-box" style="display: none;">
+                        <p>Nuestros servicios de optimización están orientados a mejorar la eficiencia y el rendimiento de los procesos clave de su empresa.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -207,19 +306,13 @@
 
     <!-- Script para mostrar y ocultar el cuadro de texto -->
     <script>
-        function toggleSection(id) {
-            const section = document.getElementById(id);
-            const isDisplayed = window.getComputedStyle(section).display !== "none";
-
-            if (isDisplayed) {
-                section.style.display = "none";
+        function toggleInfo(id) {
+            const infoBox = document.getElementById(id);
+            if (infoBox.style.display === "none") {
+                infoBox.style.display = "block";
             } else {
-                section.style.display = "block";
+                infoBox.style.display = "none";
             }
-        }
-
-        function closeSection(id) {
-            document.getElementById(id).style.display = "none";
         }
     </script>
 </body>
