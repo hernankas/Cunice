@@ -190,7 +190,7 @@
             <h2>Servicios</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="service-icon-wrapper" onclick="toggleInfo('infoAsesoramiento')">
+                    <div class="service-icon-wrapper" onclick="toggleServiceInfo('infoAsesoramiento')">
                         <span class="arrow">➔</span>
                         <i class="fas fa-briefcase service-icon"></i>
                     </div>
@@ -201,7 +201,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="service-icon-wrapper" onclick="toggleInfo('infoCapacitaciones')">
+                    <div class="service-icon-wrapper" onclick="toggleServiceInfo('infoCapacitaciones')">
                         <span class="arrow">➔</span>
                         <i class="fas fa-chalkboard-teacher service-icon"></i>
                     </div>
@@ -212,7 +212,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="service-icon-wrapper" onclick="toggleInfo('infoProcesos')">
+                    <div class="service-icon-wrapper" onclick="toggleServiceInfo('infoProcesos')">
                         <span class="arrow">➔</span>
                         <i class="fas fa-tasks service-icon"></i>
                     </div>
@@ -306,6 +306,12 @@
 
         function closeSection(id) {
             document.getElementById(id).style.display = "none";
+        }
+
+        function toggleServiceInfo(infoId) {
+            const infoBox = document.getElementById(infoId);
+            const isVisible = infoBox.style.display === "block";
+            infoBox.style.display = isVisible ? "none" : "block";
         }
     </script>
 </body>
