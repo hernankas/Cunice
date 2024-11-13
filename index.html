@@ -71,7 +71,7 @@
             padding: 40px;
             position: relative;
             border-radius: 8px;
-            display: none;
+            display: none; /* Oculta por defecto */
         }
 
         .sobre-nosotros-bg::before {
@@ -174,6 +174,14 @@
         <h1>Bienvenidos a Cunice S.A.S.</h1>
         <p>Su aliado en asesoramiento empresarial y capacitación</p>
     </header>
+
+    <!-- Sobre Nosotros (Oculta por defecto) -->
+    <section id="nosotros" class="sobre-nosotros-bg">
+        <h2>Sobre Nosotros</h2>
+        <p>En <strong>Cunice S.A.S.</strong>, somos una consultora especializada en impulsar el crecimiento y desarrollo sostenible de las empresas. Con más de una década de experiencia en el sector, brindamos asesoramiento estratégico y capacitaciones gerenciales que ayudan a nuestros clientes a enfrentar los desafíos actuales del mercado y aprovechar las oportunidades de innovación.</p>
+        <p>Nos enfocamos en transformar la visión de cada organización en resultados tangibles, optimizando procesos y potenciando el talento humano. Nuestro equipo está conformado por profesionales expertos en diversas áreas, comprometidos en ofrecer soluciones a la medida que contribuyan al logro de los objetivos empresariales, a la mejora continua y a la creación de valor a largo plazo.</p>
+        <p>En Cunice S.A.S., creemos firmemente que el éxito se construye mediante alianzas sólidas y confiables. Nos enorgullece acompañar a nuestros clientes en cada paso de su camino hacia la excelencia empresarial, adaptándonos a sus necesidades y brindando un enfoque innovador que promueve el crecimiento y la competitividad en un entorno global en constante cambio.</p>
+    </section>
 
     <!-- Servicios -->
     <section id="servicios">
@@ -282,15 +290,23 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script para mostrar y ocultar información -->
+    <!-- Script para mostrar y ocultar la sección Nosotros -->
     <script>
-        function toggleInfo(infoId) {
-            const infoBox = document.getElementById(infoId);
-            const isVisible = infoBox.style.display === "block";
-            infoBox.style.display = isVisible ? "none" : "block";
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            const isDisplayed = window.getComputedStyle(section).display !== "none";
+
+            if (isDisplayed) {
+                section.style.display = "none";
+            } else {
+                section.style.display = "block";
+            }
+        }
+
+        function closeSection(id) {
+            document.getElementById(id).style.display = "none";
         }
     </script>
-
 </body>
 
 </html>
